@@ -14,6 +14,7 @@ import { SearchService } from './services/search.service';
 })
 export class SearchPageComponent implements OnInit {
 
+  /* values */
   public insertValue: string;
   public searchPageResult: SearchPageResult[] = [];
   public searchParameters: SearchParameters;
@@ -27,7 +28,9 @@ export class SearchPageComponent implements OnInit {
     this.language = window.navigator.language.slice(0, 2);
   }
 
-  public arrayOfStrings(changeprop: string): void {
+
+  /*get request call */
+  public getRequestResults(changeprop: string): void {
     if (changeprop.length < 2) {
       this.searchPageResult = [];
       this.disableButton = true;
@@ -42,11 +45,13 @@ export class SearchPageComponent implements OnInit {
     }
   }
 
-  public async clickRow(val: string) {
+  /* glick the specific row result from the table */
+  public  clickRowResult(val: string) {
     this.insertValue = val;
     this.searchPageResult = [];
   }
 
+  /*go to specific goolge search result  */
   public navigateToGoogle(): void {
     window.open(`https://www.google.com/search?q=${this.insertValue}`, '_blank');
   }

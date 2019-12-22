@@ -8,8 +8,8 @@
     <mat-toolbar-row>
       <div class="example-form">
         <mat-form-field class="example-full-width">
-          <input matInput type="search" [lang]="language" [(ngModel)]="insertValue" (ngModelChange)="arrayOfStrings(insertValue)" name="curValue"
-             (keyup)="arrayOfStrings(insertValue)" placeholder="Search..."
+          <input matInput type="search" [lang]="language" [(ngModel)]="insertValue" (ngModelChange)="getRequestResults(insertValue)" name="curValue"
+             (keyup)="getRequestResults(insertValue)" placeholder="Search..."
             class="search-input">
           <!-- <mat-icon matSuffix  [ngClass]="{'no-event-cursor':disableButton===true}" (click)="navigateToGoogle()">search</mat-icon> -->
         </mat-form-field>
@@ -19,7 +19,7 @@
   <span *ngIf="searchPageResult && searchPageResult.length>0">
     <table class="dropdown-content">
       <tr *ngFor="let searchItem of searchPageResult">
-        <td><a (click)="clickRow(searchItem.name)">{{searchItem.name}}</a></td>
+        <td><a (click)="clickRowResult(searchItem.name)">{{searchItem.name}}</a></td>
       </tr>
     </table>
   </span>

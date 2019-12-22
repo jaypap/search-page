@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+
+// Models
 import { SearchPageResult } from './models/search-page-result.model';
 import { SearchParameters } from './models/search-parameters.model';
+
+// Services
 import { SearchService } from './services/search.service';
 
 @Component({

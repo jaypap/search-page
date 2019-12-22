@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-form-field-label {
+    color: rgba(0, 0, 0, .54) !important;
+}
+
+.material-icons {
+    font-size: 120% !important;
+    cursor: pointer;
+}
+
+.mat-toolbar,
+.mat-toolbar h1,
+.mat-toolbar h2,
+.mat-toolbar h3,
+.mat-toolbar h4,
+.mat-toolbar h5,
+.mat-toolbar h6 {
+
+
+    font: inherit !important;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 11px;
+    top: 35%;
+}
+
+.no-action-cursor:hover{
+    cursor: not-allowed !important;
+}
+
+.no-event-cursor:hover{
+    pointer-events: none;
+}

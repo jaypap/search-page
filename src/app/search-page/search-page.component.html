@@ -1,0 +1,30 @@
+<mat-card class="center">
+  <mat-toolbar>
+    <mat-toolbar-row>
+      <mat-card-subtitle>
+        What place are you looking for?
+      </mat-card-subtitle>
+    </mat-toolbar-row>
+    <mat-toolbar-row>
+      <div class="example-form">
+        <mat-form-field class="example-full-width">
+          <input matInput type="search" [lang]="language" [(ngModel)]="insertValue" (ngModelChange)="arrayOfStrings(insertValue)" name="curValue"
+             (keyup)="arrayOfStrings(insertValue)" placeholder="Search..."
+            class="search-input">
+          <!-- <mat-icon matSuffix  [ngClass]="{'no-event-cursor':disableButton===true}" (click)="navigateToGoogle()">search</mat-icon> -->
+        </mat-form-field>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <span *ngIf="searchPageResult && searchPageResult.length>0">
+    <table class="dropdown-content">
+      <tr *ngFor="let searchItem of searchPageResult">
+        <td><a (click)="clickRow(searchItem.name)">{{searchItem.name}}</a></td>
+      </tr>
+    </table>
+  </span>
+  <mat-card-actions>
+    <button mat-button class="search-button" [ngClass]="{'no-action-cursor':disableButton===true}"
+      [disabled]="disableButton===true" (click)="navigateToGoogle()">Click to search</button>
+  </mat-card-actions>
+</mat-card>

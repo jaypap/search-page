@@ -1,0 +1,39 @@
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.search-button {
+  margin-left: 7px !important;
+}
+
+.mat-card-content,
+.mat-card-subtitle {
+  font-size: 18px;
+  color: rgba(0, 0, 0, .8) !important;
+}
+
+.mat-card {
+  font-size: 15px !important;
+}
+
+.dropdown-content {
+  /* position: absolute; */
+  background-color: #fff;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  width: 100%;
+  max-width: 515px;
+  padding: 10px;
+}
+
+tr:hover {
+  background-color: rgb(241, 237, 237);
+  cursor: pointer;
+}

@@ -14,22 +14,28 @@ import { SearchService } from './services/search.service';
 })
 export class SearchPageComponent implements OnInit {
 
-  /* values */
+  /* properties */
   public insertValue: string;
   public searchPageResult: SearchPageResult[] = [];
   public searchParameters: SearchParameters;
   public language: string;
   public disableButton = true;
 
+  /* inject search service */
   constructor(private searchService: SearchService) {
   }
 
   ngOnInit() {
+    /* initialize browsers' languange 'en' or 'el' */
     this.language = window.navigator.language.slice(0, 2);
   }
 
 
-  /*get request call */
+  /*
+  * check if the input length is more than 2 letters
+  * get request call with parameters
+  * enable search button if the call returns results
+  */
   public getRequestResults(changeprop: string): void {
     if (changeprop.length < 2) {
       this.searchPageResult = [];
@@ -45,13 +51,16 @@ export class SearchPageComponent implements OnInit {
     }
   }
 
-  /* glick the specific row result from the table */
-  public  clickRowResult(val: string) {
+  /*
+  * click the specific row result from the dropdown menu
+  * emapty the search array - close the dropdown menu
+  * */
+  public clickRowResult(val: string) {
     this.insertValue = val;
     this.searchPageResult = [];
   }
 
-  /*go to specific goolge search result  */
+  /*go to specific goolge search result   */
   public navigateToGoogle(): void {
     window.open(`https://www.google.com/search?q=${this.insertValue}`, '_blank');
   }

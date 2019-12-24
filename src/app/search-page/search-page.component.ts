@@ -20,7 +20,7 @@ export class SearchPageComponent implements OnInit {
   public searchParameters: SearchParameters;
   public language: string;
   public innerWidth: number;
-  public indx: number;
+  public limit: number;
   public disableButton = true;
 
   /* inject search service */
@@ -48,7 +48,8 @@ export class SearchPageComponent implements OnInit {
     } else {
       this.searchService.get('http://35.180.182.8/Search', {
         keywords: changeprop,
-        language: this.language
+        language: this.language,
+        limit: this.limit
       }).subscribe((result) => {
         this.searchPageResult = result.entries;
         this.searchPageResult.length > 0 ? this.disableButton = false : this.disableButton = true;
@@ -84,15 +85,15 @@ export class SearchPageComponent implements OnInit {
     this.getWindowSize(window.innerWidth);
   }
 
-/*
-    * get windows width size
-    * @params windowsWidth - the windows' width
-    * check the width and give the number of the table rows
-    * pc-table mode 20 rows mobiles 10 rows
-   */
+  /*
+      * get windows width size
+      * @params windowsWidth - the windows' width
+      * check the width and give the number of the table rows
+      * pc-table mode 20 rows mobiles 10 rows
+     */
   private getWindowSize(windowWidth) {
     this.innerWidth = windowWidth;
-    this.innerWidth < 1024 ? this.indx = 10 : this.indx = 20;
+    this.innerWidth < 1024 ? this.limit = 10 : this.limit = 20;
   }
 
 }

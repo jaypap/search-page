@@ -19,7 +19,7 @@
   <span *ngIf="searchPageResult && searchPageResult.length>0">
     <table class="dropdown-content">
       <tr *ngFor="let searchItem of searchPageResult; let i= index;">
-        <td *ngIf="i<indx"><a (click)="clickRowResult(searchItem.name)">{{searchItem.name}}</a></td>
+        <td><a (click)="clickRowResult(searchItem.name)">{{searchItem.name}}</a></td>
 
       </tr>
     </table>

@@ -38,10 +38,12 @@ body {
     margin-top: 100px;
 }
 
-.no-action-cursor:hover{
+.no-action-cursor:hover {
     cursor: not-allowed !important;
 }
 
-.no-event-cursor:hover{
+.no-event-cursor:hover {
     pointer-events: none;
 }
+
+

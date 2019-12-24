@@ -88,7 +88,7 @@ export class SearchPageComponent implements OnInit {
   /*
       * get windows width size
       * @params windowsWidth - the windows' width
-      * check the width and give the number of the table rows
+      * check the width and give the limit of results
       * pc-table mode 20 rows mobiles 10 rows
      */
   private getWindowSize(windowWidth) {

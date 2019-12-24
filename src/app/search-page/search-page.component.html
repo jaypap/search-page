@@ -1,4 +1,4 @@
-<mat-card class="center">
+<mat-card class="position-search-page">
   <mat-toolbar>
     <mat-toolbar-row>
       <mat-card-subtitle>
@@ -6,12 +6,11 @@
       </mat-card-subtitle>
     </mat-toolbar-row>
     <mat-toolbar-row>
-      <div class="example-form">
-        <mat-form-field class="example-full-width">
+      <div class="form-width">
+        <mat-form-field class="form-full-width">
           <input matInput type="search" [lang]="language" [(ngModel)]="insertValue"
             (ngModelChange)="getRequestResults(insertValue)" name="curValue" (keyup)="getRequestResults(insertValue)"
             placeholder="Search..." class="search-input">
-          <!-- <mat-icon matSuffix  [ngClass]="{'no-event-cursor':disableButton===true}" (click)="navigateToGoogle()">search</mat-icon> -->
         </mat-form-field>
       </div>
     </mat-toolbar-row>
